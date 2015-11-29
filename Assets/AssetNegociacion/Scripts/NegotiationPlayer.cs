@@ -5,12 +5,15 @@ using System.Collections;
 public class NegotiationPlayer : MonoBehaviour {
 
 
-    public GameObject panel;
+    public GameObject panelA;
+    public GameObject panelB;
+
     private bool _isDialogOn = false;
 
 	// Use this for initialization
 	void Start () {
-        panel.SetActive(false);
+        panelA.SetActive(false);
+        panelB.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -32,8 +35,20 @@ public class NegotiationPlayer : MonoBehaviour {
         {
             _isDialogOn = true;
             print("Hola!");
-            panel.SetActive(true);
+            panelA.SetActive(true);
         }
+    }
+
+    public void toStateA()
+    {
+        panelB.SetActive(false);
+        panelA.SetActive(true);
+    }
+
+    public void toStateB()
+    {
+        panelA.SetActive(true);
+        panelB.SetActive(false);
     }
 
 }
